@@ -20,9 +20,9 @@ Output to the console the answer to the proposed math problem.
 
 ## OPERATION:
 
-Pull repo
-Open ConsoleApp1.sln in Visual Studio IDE
-Run (Ctrl+f5 in windows)
+Pull repo<br>
+Open ConsoleApp1.sln in Visual Studio IDE<br>
+Run (Ctrl+f5 in windows)<br>
 
 ![Capture](https://github.com/jasonb315/Calculator/blob/master/assets/Capture.JPG) <br>
 
