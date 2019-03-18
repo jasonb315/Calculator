@@ -106,13 +106,17 @@ namespace ConsoleApp1
         {
             try
             {
-                Console.WriteLine("Result: " + (a / b));
+                int zTest = a / b;
             }
             catch (DivideByZeroException)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("A black hole appears.");
             }
+
+            int mainDivision = a / b;
+            double remainder = a % b;
+            Console.WriteLine("Result: " + (mainDivision + (remainder/b)));
         }
 
     }
