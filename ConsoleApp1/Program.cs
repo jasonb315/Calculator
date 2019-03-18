@@ -6,6 +6,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            // program details
             string appName = "CLI-Calc";
             string appVersion = "1.0.0";
             string appAuthor = "Jason Burns";
@@ -23,6 +24,7 @@ namespace ConsoleApp1
                 Console.WriteLine("Select: Add, Subtract, Multiply, Divide: ");
                 Console.ForegroundColor = ConsoleColor.Green;
                 string inputVal = Console.ReadLine().ToLower();
+                //check input for operation type, if valid collect values to operate
                 if (inputVal == "add" || inputVal == "subtract" || inputVal == "multiply" || inputVal == "divide")
                 {
                     string operation = inputVal;
@@ -35,6 +37,7 @@ namespace ConsoleApp1
 
                     if (numOne == "exit")
                     {
+                        //break loop, end program.
                         return;
                     }
 
@@ -51,8 +54,9 @@ namespace ConsoleApp1
 
                     int.TryParse(numTwo, out b);
 
-                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.ForegroundColor = ConsoleColor.Green;
 
+                    // send user input to specified operation function
                     switch (operation)
                     {
                         case "add":
@@ -82,6 +86,7 @@ namespace ConsoleApp1
                 }
                 else
                 {
+                    // something other than a valid operation or exit cmd was entered
                     Console.WriteLine("Selection Error");
                 }
             }
@@ -106,18 +111,18 @@ namespace ConsoleApp1
         {
             try
             {
-                int zTest = a / b;
+                int mainDivision = a / b;
+                double remainder = a % b;
+                // add division sans remainder to remainder for result
+                Console.WriteLine("Result: " + (mainDivision + (remainder / b)));
             }
             catch (DivideByZeroException)
             {
+                // ha!
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("A black hole appears.");
             }
 
-            int mainDivision = a / b;
-            double remainder = a % b;
-            Console.WriteLine("Result: " + (mainDivision + (remainder/b)));
         }
-
     }
 }
